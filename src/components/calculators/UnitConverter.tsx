@@ -126,7 +126,10 @@ const UnitConverter: React.FC<UnitConverterProps> = ({ onBack }) => {
             {Object.entries(conversionData).map(([key, data]) => (
               <button
                 key={key}
-                onClick={() => setCategory(key)}
+                onClick={() => {
+                  setInputValue('');
+                  setCategory(key);
+                }}
                 className={`py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                   category === key
                     ? 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white'
